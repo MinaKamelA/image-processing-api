@@ -1,0 +1,58 @@
+/* Base rules: Start */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+	background-color: #fff;		
+}
+
+/* Base rules: End */
+
+/* Header rules: Start */
+
+.header-container {
+	width: 100%;
+	background-color: #000; 				/*Mountbatten-Pink*/
+	position: fixed;
+	z-index: 1;
+    margin-bottom: 10px;
+}
+
+.title {
+	width: 100%;
+    display: block;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: #000;				/*Mountbatten-Pink*/
+    color: #fefefe;							/*Queen-Pink*/
+    padding: 1.6rem 5px;
+    text-align: center;
+}
+
+/* Header rules: End */
+
+/* Content rules: Start */
+
+main {
+	padding: 5rem 10px 0rem 10px;
+	color: #1a1919;
+}
+
+.main-content {
+    color:#1a1919;
+    margin-top: 10px;
+}
+
+section {
+	color: #1a1919;							
+	padding: 5rem 10px 0rem 10px;
+}
+
+.hide{
+	display: none;
+}
+/* Content rules: End */

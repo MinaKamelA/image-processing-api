@@ -1,0 +1,53 @@
+{
+  "name": "image-processing-api",
+  "version": "1.0.0",
+  "description": "Image Processing API can be used as a placeholder and resizer for images in your website to reduce loading time and used resources in your server",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/*.ts",
+    "fix:lint": "eslint src/*.ts --fix",
+    "prettier": "prettier --config .prettierrc '*.js' --write",
+    "build": "tsc",
+    "jasmine": "jasmine",
+    "test": "npm run build && npm run jasmine",
+    "start": "nodemon src/index.ts"
+  },
+  "keywords": [
+    "image",
+    "processing",
+    "api",
+    "resize",
+    "image"
+  ],
+  "author": "Mina Kamel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "jasmine": "^4.0.2",
+    "jasmine-spec-reporter": "^7.0.0",
+    "node-cache": "^5.1.2",
+    "sharp": "^0.30.3",
+    "supertest": "^6.2.2"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.4.1",
+    "@types/eslint-config-prettier": "^6.11.0",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/express": "^4.17.13",
+    "@types/jasmine": "^3.10.3",
+    "@types/node": "^17.0.21",
+    "@types/node-cache": "^4.2.5",
+    "@types/prettier": "^2.4.4",
+    "@types/sharp": "^0.30.0",
+    "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  }
+}
