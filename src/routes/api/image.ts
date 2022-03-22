@@ -36,7 +36,7 @@ const resizeImage = async (
     return await result;
 };
 
-image.get('/', async (req, res) => {
+image.get('/', async (req: express.Request, res: express.Response): Promise <void> => {
     if (cache.has(req.originalUrl)) {
         res.writeHead(200, {
             'Content-Type': 'image/jpg',
@@ -59,9 +59,6 @@ image.get('/', async (req, res) => {
                 'Content-Type': 'image/jpg',
             }).end(imageBuffer);
         } catch (err) {
-            console.log(
-                `There was an error while trying to resize your image error: ${err}`
-            );
             res.send(`The image you are looking for doesn't exist`);
         }
     }

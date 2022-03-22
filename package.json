@@ -4,7 +4,7 @@
   "description": "Image Processing API can be used as a placeholder and resizer for images in your website to reduce loading time and used resources in your server",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src/*.ts",
+    "lint": "eslint src/**/*.ts",
     "fix:lint": "eslint src/*.ts --fix",
     "prettier": "prettier --write  **/**.ts",
     "build": "tsc",
