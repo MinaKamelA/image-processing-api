@@ -13,16 +13,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = __importDefault(require("path"));
-const images_1 = __importDefault(require("../../../routes/api/images"));
+const image_1 = __importDefault(require("../../../routes/api/image"));
 describe('Test full image resize function', () => {
     let inPath = path_1.default.resolve(`assets/full/iceland.jpg`);
     let outPath = path_1.default.resolve(`assets/thumbs/iceland-thumb.jpg`);
     it(`should throw error`, () => __awaiter(void 0, void 0, void 0, function* () {
-        yield expectAsync(images_1.default.resizeImage(inPath, outPath, 200, 200)).toBeRejectedWithError();
+        yield expectAsync(image_1.default.resizeImage(inPath, outPath, 200, 200)).toBeRejectedWithError();
     }));
     it(`should run without errors`, () => __awaiter(void 0, void 0, void 0, function* () {
         inPath = path_1.default.resolve(`assets/full/fjord.jpg`);
         outPath = path_1.default.resolve(`assets/thumbs/fjord-thumb.jpg`);
-        expect(yield images_1.default.resizeImage(inPath, outPath, 200, 200)).toBeTruthy();
+        expect(yield image_1.default.resizeImage(inPath, outPath, 200, 200)).toBeTruthy();
     }));
 });

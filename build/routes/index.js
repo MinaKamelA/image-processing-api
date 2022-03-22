@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const images_1 = __importDefault(require("./api/images"));
-const routes = (0, express_1.default)();
+const image_1 = __importDefault(require("./api/image"));
+const routes = express_1.default.Router();
 routes.get('/', (req, res) => {
     res.redirect('/api/image');
 });
-routes.use('/image', images_1.default.images);
+routes.use('/image', image_1.default.image);
 exports.default = routes;
