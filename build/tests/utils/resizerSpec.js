@@ -12,16 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const supertest_1 = __importDefault(require("supertest"));
-const index_1 = __importDefault(require("../../../index"));
-const request = (0, supertest_1.default)(index_1.default);
-describe('Test Image endpoint responses', () => {
-    it(`should throw error 404`, () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get('/api/image?name=iceland');
-        expect(response.status).toBe(404);
+const path_1 = __importDefault(require("path"));
+const resizer_1 = __importDefault(require("../../utils/resizer"));
+describe('Test full image resize function', () => {
+    let inPath = path_1.default.resolve(`assets/full/iceland.jpg`);
+    let outPath = path_1.default.resolve(`assets/thumbs/iceland-thumb.jpg`);
+    it(`should throw error`, () => __awaiter(void 0, void 0, void 0, function* () {
+        yield expectAsync(resizer_1.default.resizeImage(inPath, outPath, 200, 200)).toBeRejectedWithError();
     }));
     it(`should run without errors`, () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get('/api/image?name=fjord');
-        expect(response.status).toBe(200);
+        inPath = path_1.default.resolve(`assets/full/fjord.jpg`);
+        outPath = path_1.default.resolve(`assets/thumbs/fjord-thumb.jpg`);
+        expect(yield resizer_1.default.resizeImage(inPath, outPath, 200, 200)).toBeTruthy();
     }));
 });

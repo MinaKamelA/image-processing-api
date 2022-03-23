@@ -7,6 +7,10 @@ const express_1 = __importDefault(require("express"));
 const _1 = __importDefault(require("./routes/."));
 const app = (0, express_1.default)();
 const port = 3030;
+app.use(express_1.default.static('website'));
+app.get('/', () => {
+    console.log('Welcome to image processing api');
+});
 app.listen(port, () => {
     console.log(`Server is ready and running on port ${port}`);
     console.log(`http://localhost:${port}`);

@@ -6,7 +6,9 @@ const port = 3030;
 
 app.use(express.static('website'));
 
-app.get('/', (req: express.Request, res: express.Response): void =>{});
+app.get('/', (): void => {
+    console.log('Welcome to image processing api');
+});
 
 app.listen(port, (): void => {
     console.log(`Server is ready and running on port ${port}`);

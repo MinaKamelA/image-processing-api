@@ -1,18 +1,15 @@
-import path from 'path';
-import image from '../../../routes/api/image';
+import supertest from 'supertest';
+import app from '../../../index';
 
-describe('Test full image resize function', () => {
-    let inPath = path.resolve(`assets/full/iceland.jpg`);
-    let outPath = path.resolve(`assets/thumbs/iceland-thumb.jpg`);
-    it(`should throw error`, async () => {
-        await expectAsync(
-            image.resizeImage(inPath, outPath, 200, 200)
-        ).toBeRejectedWithError();
+const request = supertest(app);
+
+describe('Test Image endpoint responses', () => {
+    it(`should throw error 404`, async () => {
+        const response = await request.get('/api/image?name=iceland');
+        expect(response.status).toBe(404);
     });
-
     it(`should run without errors`, async () => {
-        inPath = path.resolve(`assets/full/fjord.jpg`);
-        outPath = path.resolve(`assets/thumbs/fjord-thumb.jpg`);
-        expect(await image.resizeImage(inPath, outPath, 200, 200)).toBeTruthy();
+        const response = await request.get('/api/image?name=fjord');
+        expect(response.status).toBe(200);
     });
 });

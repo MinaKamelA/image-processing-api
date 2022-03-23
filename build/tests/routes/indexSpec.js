@@ -15,11 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const index_1 = __importDefault(require("../../index"));
 const request = (0, supertest_1.default)(index_1.default);
-describe('Test endpoint responses', () => {
-    it('gets the image endpoint', () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get('/api/image');
-        expect(response.status).toBe(200);
-    }));
+describe('Test api endpoint responses', () => {
     it('redirects from the api endpoint', () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield request.get('/api');
         expect(response.status).toBe(302);
